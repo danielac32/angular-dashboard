@@ -1,0 +1,14 @@
+.content {
+    margin-left: 300px;
+    margin-top: 120px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer {
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+}

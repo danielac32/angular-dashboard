@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import {HeaderComponent} from "../layout/header/header.component"
-import {FooterComponent} from "../layout/footer/footer.component"
-import {LeftPaneComponent} from "../layout/left-pane/left-pane.component"
-import {MainContentComponent} from "../layout/main-content/main-content.component"
-
-
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+
+import { HeaderComponent } from '../components/header/header.component';
+import { FooterComponent } from '../components/footer/footer.component';
+import { LeftPaneComponent } from '../components/left-pane/left-pane.component';
+
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     LeftPaneComponent,
-    MainContentComponent,
+    // MainContentComponent,
     RouterLink,
     CommonModule,
     RouterModule,
