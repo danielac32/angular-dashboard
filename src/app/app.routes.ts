@@ -22,9 +22,6 @@ export const routes: Routes = [
             // loadComponent: () => import('./dashboard/pages/profile-page/profile-page.component'),
             component: ProfilePageComponent
         },
-        {
-            path:'', redirectTo: 'reservations', pathMatch: 'full',
-          }
     ]
 },
 
