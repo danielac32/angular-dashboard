@@ -1,10 +1,63 @@
 
-<div class="containe">
-    <div>
-        <h1>Hola Profile</h1>
-		<h3>Nombre</h3>
-		<h3>Apellido</h3>
-		<h3>Password</h3>
-		<h3>Direccion</h3>
-    </div>
+@if(view === true){
+<div class="card p-4" *ngIf="person">
+  <h2 class="mb-4 text-center">Información</h2>
+  <p>Nombre: {{ person.name }}</p>
+  <p>Correo: {{ person.email }}</p>
+  <p>Dirección: {{ direction }}</p>
+  <button type="submit" class="btn btn-block" (click)="handleClick()">Actualizar</button>
 </div>
+}
+@else {
+
+
+<form class="form-container" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+  <h2>Actualizar</h2>
+		  <input type="text" formControlName="name" required  placeholder="Nombre de Usuario" >
+		  <div *ngIf="updateForm.get('name')?.hasError('required')" class="error-message" >
+		      Nombre requerido
+		  </div>
+		 
+		  <input type="email" formControlName="email" required  placeholder="Correo electrónico" >
+		  <div *ngIf="updateForm.get('email')?.hasError('email')" class="error-message">
+		      El email ingresado no es válido.
+		  </div>
+		  <div *ngIf="updateForm.get('email')?.hasError('required')" class="error-message" >
+		      email requerido
+		  </div>
+		 
+		<select formControlName="selectedItem" >
+			<option value="" disabled selected>Direcciones</option>
+		    @for (direction of directions; track direction.id) {
+	            <option value="{{ direction.id }}">{{ direction.address }}</option>
+	        } @empty {
+	            <option>There are no items.</option>
+	        }   
+		</select>
+		 
+		  <input type="password"  formControlName="password" required placeholder="Contraseña" >
+		  <div *ngIf="updateForm.get('password')?.hasError('required')">
+		      contraseña requerida
+		  </div>
+		  <div *ngIf="updateForm.get('password')?.hasError('minlength')">
+		        contraseña menor a 6 caracteres
+		  </div>
+		 
+		  <input type="password"  formControlName="password2" required placeholder="Repita la Contraseña" >
+		  <div *ngIf="updateForm.get('password2')?.hasError('required')">
+		      contraseña requerida
+		  </div>
+		  <div *ngIf="updateForm.get('password2')?.hasError('minlength')">
+		        contraseña menor a 6 caracteres
+		  </div>
+	 
+		<div *ngIf="updateForm.get('password')?.value !== updateForm.get('password2')?.value" class="error-message">
+		  Las contraseñas no coinciden
+		</div>
+
+	    <button type="submit" >Actualizar</button>
+	    <button type="submit"  (click)="handleClick()">volver</button>
+</form>
+
+
+}

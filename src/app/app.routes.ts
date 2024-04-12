@@ -9,6 +9,8 @@ import { LoginComponent } from './auth/pages/login/login.component';
 import { RegisterComponent } from './auth/pages/register/register.component';
 import { UsersComponent } from './auth/pages/users/users.component'
 import { AuthGuard } from './auth/services/auth.guard';
+import { EditComponent } from './auth/components/edit/edit.component';
+
 
 export const routes: Routes = [
 { 
@@ -32,7 +34,14 @@ export const routes: Routes = [
             path: 'users',
             title: 'users',
             // loadComponent: () => import('./dashboard/pages/profile-page/profile-page.component'),
-            component: UsersComponent,data: { rol:'ADMIN' }
+            component: UsersComponent,data: { rol:'ADMIN' },
+            children: [
+                {
+                    path: 'edit',
+                    title: 'edit',
+                    component: EditComponent,
+                }
+            ]
         }
     ]
 },

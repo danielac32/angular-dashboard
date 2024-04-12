@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 export class AuthGuard implements CanActivate {
   rol?:string;
 
-  constructor(private route: ActivatedRoute,private authService: AuthService, private router: Router) {}
+  constructor(/*private route: ActivatedRoute,*/private authService: AuthService, private router: Router) {}
 
   canActivate(next: ActivatedRouteSnapshot): boolean {
     // Verificar si el usuario está autenticado
@@ -20,7 +20,6 @@ export class AuthGuard implements CanActivate {
 
     this.rol=this.authService.getRol();
 
-    
     if (this.authService.isLoggedIn()) {
       if (rol && this.rol && rol.length > 0 && !rol.includes(this.rol)) {
          alert("no puede entrar aqui")

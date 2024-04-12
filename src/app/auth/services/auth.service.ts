@@ -11,13 +11,15 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AuthService {
   private baseUrl = 'http://localhost:4000';
-  constructor(private httpClient: HttpClient,
-  			  private router: Router) { }
+  constructor(private httpClient: HttpClient,private router: Router) { }
 
   deleteUser():void{
     
   }
-  
+  isAdmin():boolean{
+      if(this.getRol()==="ADMIN")return true;
+      return false;
+  }
   updateRol(email:string,rol:string):Observable<UserResponse>{
       const token = localStorage.getItem('accessToken');
       if (token) {

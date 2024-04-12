@@ -1,1 +1,47 @@
-<p>users works!</p>
+
+<div class="table-container">
+	<button  class="" (click)="handleClick()">volver</button>
+  <table >
+    <thead >
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Active</th>
+                <!--<th>Password</th>-->
+                <th>Direction ID</th>
+                <th>Rol</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+         
+            <tbody >
+            @for (user of users; track user.id) {
+                  <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.isActive ? 'Si' : 'No' }}</td>
+                    <!--<td>{{ user.password }}</td>-->
+                    <td>{{ user.direction?.address }}</td>
+                    <td>{{ user.rol}}</td>
+                    <td>
+                      @if (user.isActive === true){
+                          <button class="" (click)="desactivar(user?.email)">Desactivar</button>
+                      }
+                      @else{
+                          <button class="" (click)="activar(user?.email)">Activar</button>
+                      }
+                      <button class="" (click)="editar(user?.email)">Editar</button>
+                      <button class="" (click)="eliminar(user?.email)">Eliminar</button>
+                      </td>
+                  </tr>
+            }
+            </tbody>
+        </table>
+
+
+  <div class="content">
+    <router-outlet></router-outlet> <!-- Aquí se cargarán los componentes hijos -->
+  </div>
+</div>

@@ -7,8 +7,13 @@
         <ul class="nav-menu">
           <li><a routerLink="/dashboard/reservations">Reservations</a></li>
           <li><a routerLink="/dashboard/profile">Perfil</a></li>
-          <li>Usuarios</li>
-          <li>Salir</li>
+          @if(admin){
+              <li>
+                <!--<a routerLink="/dashboard/users">Usuarios</a>-->
+                <a class="" [routerLink]="['/dashboard/users']" [queryParams]="{ reload: true }">Usuarios</a>
+              </li>
+          }
+          <li><a  (click)="logout()">Salir</a></li>
         </ul>
       </div>
     </nav>
