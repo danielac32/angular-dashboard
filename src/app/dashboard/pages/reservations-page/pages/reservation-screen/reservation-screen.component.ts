@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router,ParamMap } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { switchMap } from 'rxjs';
-import { ReservationsService } from '../services/reservations.service';
-import { Reservation} from '../interfaces/reservation.interface';
-import { StatusReserveTypes } from '../interfaces/status-reserve.interface';
+import { ReservationsService } from '../../services/reservations.service';
+import { Reservation} from '../../interface/reservation.interface';
+import { StatusReserveTypes } from '../../interface/status-reserve.interface';
 import { CommonModule } from '@angular/common';
-import { SalonService } from '../../salon/salon.service';
-import { SalonResponse,Salon } from '../../salon/salon.interface';
-import { AuthService } from '../../auth/auth.service';
+import { SalonService } from '../../../../../salon/salon.service';
+import { SalonResponse,Salon } from '../../../../../salon/salon.interface';
+import { AuthService } from '../../../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-reservation-screen',

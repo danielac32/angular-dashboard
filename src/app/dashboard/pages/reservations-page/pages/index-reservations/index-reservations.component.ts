@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Reservation,ReservationUser,ReservationWithUser } from '../interfaces/reservation.interface';
+import { Reservation,ReservationUser,ReservationWithUser } from '../../interface/reservation.interface';
 import { CommonModule } from '@angular/common';
-import { ReservationsService } from '../services/reservations.service';
+import { ReservationsService } from '../../services/reservations.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ReservationCardComponent } from '../components/reservation-card/reservation-card.component';
-import { SalonService } from '../../salon/salon.service';
-import { AuthService } from '../../auth/auth.service';
+import { ReservationCardComponent } from '../../components/reservation-card/reservation-card.component';
+import { SalonService } from '../../../../../salon/salon.service';
+import { AuthService } from '../../../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-index-reservations',

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ReservationsService } from '../services/reservations.service';
+import { ReservationsService } from '../../services/reservations.service';
 import { Router,NavigationExtras } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { SalonService } from '../../salon/salon.service';
-import { AuthService } from '../../auth/auth.service';
-import  {UserResponse} from '../../auth/auth-login.interface';
-import { CreateReservation } from '../interfaces/create-reservation.interface';
+import { SalonService } from '../../../../../salon/salon.service';
+import { AuthService } from '../../../../../auth/services/auth.service';
+import  {UserResponse} from '../../../../../auth/interface/auth-login.interface';
+import { CreateReservation } from '../../interface/create-reservation.interface';
 //import { format } from 'date-fns';
-import { SalonResponse,Salon } from '../../salon/salon.interface';
-import {Reservation,ReservationResponse} from '../interfaces/reservation.interface';
+import { SalonResponse,Salon } from '../../../../../salon/salon.interface';
+import {Reservation,ReservationResponse} from '../../interface/reservation.interface';
 
 @Component({
   selector: 'app-create-reservations',

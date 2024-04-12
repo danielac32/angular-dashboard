@@ -10,7 +10,8 @@ import { RegisterComponent } from './auth/pages/register/register.component';
 import { UsersComponent } from './auth/pages/users/users.component'
 import { AuthGuard } from './auth/services/auth.guard';
 import { EditComponent } from './auth/components/edit/edit.component';
-
+import {CreateReservationsComponent} from './dashboard/pages/reservations-page/pages/create-reservations/create-reservations.component'
+import {IndexReservationsComponent} from './dashboard/pages/reservations-page/pages/index-reservations/index-reservations.component'
 
 export const routes: Routes = [
 { 
@@ -23,6 +24,18 @@ export const routes: Routes = [
             title: 'Reservations',
             // loadComponent: () => import('./dashboard/pages/reservations-page/reservations-page.component'),
             component: ReservationsPageComponent,
+            children: [
+                {
+                    path: 'crear-reservacion',
+                    title: 'crear-reservacion',
+                    component: CreateReservationsComponent,
+                },
+                {
+                    path: 'reservaciones',
+                    title: 'list',
+                    component: IndexReservationsComponent,
+                },
+            ]
         },
         {
             path: 'profile',

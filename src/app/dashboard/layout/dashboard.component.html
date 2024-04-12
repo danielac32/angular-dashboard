@@ -1,7 +1,14 @@
 
   <!-- Barra de navegación -->
 <div class="container "><!--background>-->
-  
+	
+  <div *ngIf="status==='error'" class="alert alert-danger" role="alert">
+  {{ message }}
+</div>
+
+<div *ngIf="status==='ok'" class="alert alert-success" role="alert">
+  {{ message }}
+</div>
   <app-header></app-header>
   <div class="content">
     <router-outlet></router-outlet> <!-- Aquí se cargarán los componentes hijos -->
