@@ -1,0 +1,21 @@
+.content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.background {
+  background-image: url('IMG_4335.jpg'); /* Reemplaza 'ruta/de/la/foto.jpg' con la ruta de tu imagen */
+  background-size: cover;
+  background-position:120;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Cambia el color del texto si es necesario para que sea legible */
+  font-family: Arial, sans-serif; /* Cambia la fuente del texto si lo deseas */
+}
