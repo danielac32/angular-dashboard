@@ -35,13 +35,14 @@ export class DashboardComponent implements OnInit {
    constructor(private route: ActivatedRoute,private router: Router,private authService: AuthService/*,private dataService: DataService*/) {}
 
   ngOnInit(): void {
- 
+
     this.route.queryParams.subscribe(params => {
-    const parametro1 = params['status'];
-    const parametro2 = params['message'];
-    this.status=parametro1;
-    this.message=parametro2;
-  });
+      const parametro1 = params['status'];
+      const parametro2 = params['message'];
+      console.log(parametro1,parametro2)
+      this.status=parametro1;
+      this.message=parametro2;
+    });
 
     this.userName = this.authService.getUserName();
     this.rol=this.authService.getRol();

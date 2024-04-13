@@ -4,7 +4,7 @@
       	<a routerLink="/dashboard/reservations/crear-reservacion">Crear reservaciones</a>
       </li>
       <li>
-      	<a routerLink="/dashboard/reservations/reservaciones">reservaciones</a>
+      	<a [routerLink]="['/dashboard/reservations/reservaciones']" [queryParams]="{ reload: true }">reservaciones</a>
       </li>
       <li><a>Reporte reservación por usuario</a></li>
       <li><a>Reporte reservación por salón</a></li>

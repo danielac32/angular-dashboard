@@ -1,8 +1,8 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit ,Input} from '@angular/core';
 import { FormBuilder, FormGroup, Validators ,ReactiveFormsModule/*,FormsModule*/} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
 import { AuthService } from '../../../auth/services/auth.service';
 import { RouterLink } from '@angular/router';
 
@@ -19,6 +19,8 @@ import { RouterLink } from '@angular/router';
 
 export class HeaderComponent implements OnInit {
 	admin?:boolean;
+  @Input() public user?: string;
+
 
 	constructor(private authService: AuthService,private router: Router) {}
     ngOnInit(): void {

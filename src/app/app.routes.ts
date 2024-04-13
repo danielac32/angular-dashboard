@@ -8,10 +8,13 @@ import { AuthLayoutComponent } from './auth/layout/auth-layout.component'
 import { LoginComponent } from './auth/pages/login/login.component';
 import { RegisterComponent } from './auth/pages/register/register.component';
 import { UsersComponent } from './auth/pages/users/users.component'
+import {CreateUserComponent} from './auth/pages/create-user/create-user.component'
 import { AuthGuard } from './auth/services/auth.guard';
 import { EditComponent } from './auth/components/edit/edit.component';
 import {CreateReservationsComponent} from './dashboard/pages/reservations-page/pages/create-reservations/create-reservations.component'
 import {IndexReservationsComponent} from './dashboard/pages/reservations-page/pages/index-reservations/index-reservations.component'
+import {ReservationScreenComponent} from './dashboard/pages/reservations-page/pages/reservation-screen/reservation-screen.component'
+
 
 export const routes: Routes = [
 { 
@@ -29,6 +32,11 @@ export const routes: Routes = [
                     path: 'crear-reservacion',
                     title: 'crear-reservacion',
                     component: CreateReservationsComponent,
+                },
+                {
+                    path: 'reservacion/:id',
+                    title: 'reservacion',
+                    component: ReservationScreenComponent,
                 },
                 {
                     path: 'reservaciones',
@@ -55,7 +63,14 @@ export const routes: Routes = [
                     component: EditComponent,
                 }
             ]
+        },
+        {
+            path: 'create-user',
+            title: 'create-user',
+            // loadComponent: () => import('./dashboard/pages/profile-page/profile-page.component'),
+            component: CreateUserComponent,data: { rol:'ADMIN' },
         }
+
     ]
 },
 { 

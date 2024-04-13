@@ -1,19 +1,20 @@
+<!-- Barra de navegación -->
+<div class=" background"><!-- Utiliza la clase 'container' para centrar el contenido y hacerlo responsive -->
+      <app-header [user]="userName"></app-header>
 
-  <!-- Barra de navegación -->
-<div class="container "><!--background>-->
-	
-  <div *ngIf="status==='error'" class="alert alert-danger" role="alert">
-  {{ message }}
+        @if(status==="error"){
+          <div class="alert alert-danger" role="alert">
+            {{ message }}
+          </div>
+        }
+        @if(status==="ok"){
+          <div class="alert alert-success" role="alert">
+          {{ message }}
+          </div>
+      }
+        <div class="content">
+          <router-outlet></router-outlet> <!-- Aquí se cargarán los componentes hijos -->
+        </div>
+
+        <app-footer></app-footer>
 </div>
-
-<div *ngIf="status==='ok'" class="alert alert-success" role="alert">
-  {{ message }}
-</div>
-  <app-header></app-header>
-  <div class="content">
-    <router-outlet></router-outlet> <!-- Aquí se cargarán los componentes hijos -->
-    <app-footer></app-footer>
-  </div>
-</div>
-
-

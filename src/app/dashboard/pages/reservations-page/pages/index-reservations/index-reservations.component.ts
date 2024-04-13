@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReservationCardComponent } from '../../components/reservation-card/reservation-card.component';
 import { SalonService } from '../../../../../salon/salon.service';
 import { AuthService } from '../../../../../auth/services/auth.service';
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-index-reservations',
   standalone: true,
@@ -23,13 +23,21 @@ export class IndexReservationsComponent implements OnInit {
 
   constructor(
     private reservationsService: ReservationsService,
-    private authService: AuthService
+    private authService: AuthService,
+    private route: ActivatedRoute
   ) {}
   
   ngOnInit(): void {
     this.rol = this.authService.getRol();
     this.emailUser = this.authService.getUserEmail();
-    this.loadReservations(); // Cargar reservas al inicio
+
+    this.route.queryParams.subscribe(params => {
+       const parametro = params['reload'];
+       if(parametro){
+         this.loadReservations();
+       }
+    });
+    //this.loadReservations(); // Cargar reservas al inicio
   }
 
   loadReservations(): void {

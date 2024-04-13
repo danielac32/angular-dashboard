@@ -1,7 +1,9 @@
-body {
-  background-color: #f45b69;
-  font-family: "Asap", sans-serif;
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }
+
 
 .custom-select {
   font-family: "Asap", sans-serif;

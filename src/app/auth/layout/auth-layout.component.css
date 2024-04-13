@@ -9,7 +9,7 @@
 
 
 .background {
-  background-image: url('IMG_4335.jpg'); /* Reemplaza 'ruta/de/la/foto.jpg' con la ruta de tu imagen */
+  background-image: url('fondo.jpeg'); /* Reemplaza 'ruta/de/la/foto.jpg' con la ruta de tu imagen */
   background-size: cover;
   background-position:120;
   

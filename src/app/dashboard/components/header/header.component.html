@@ -3,7 +3,7 @@
     <nav>
       <div class="nav-container">
         <div class="logo">
-          <h1>Logo</h1>
+          <h1>{{user}}</h1>
         </div>
         <ul class="nav-menu">
           <li><a routerLink="/dashboard/reservations">Reservations</a></li>
@@ -12,6 +12,9 @@
               <li>
                 <!--<a routerLink="/dashboard/users">Usuarios</a>-->
                 <a class="" [routerLink]="['/dashboard/users']" [queryParams]="{ reload: true }">Usuarios</a>
+              </li>
+              <li>
+                 <a routerLink="/dashboard/create-user">Crear usuario</a>
               </li>
           }
           <li><a  (click)="logout()">Salir</a></li>

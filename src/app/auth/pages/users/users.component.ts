@@ -28,12 +28,10 @@ constructor(private route: ActivatedRoute,private router: Router,private authSer
   ngOnInit(): void {
 
     this.route.queryParams.subscribe(params => {
-       this.route.queryParams.subscribe(params => {
        const parametro = params['reload'];
        if(parametro){
          this.loadUsers();
        }
-      });
     });
     //this.loadUsers();
     

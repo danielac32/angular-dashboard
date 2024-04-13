@@ -14,6 +14,19 @@ export class ReservationsService {
   private baseUrl = 'http://localhost:4000';
 
   constructor(private httpClient: HttpClient) { }
+  
+  deleteReservation(id:number):Observable<Reservation>{
+     const token = localStorage.getItem('accessToken');
+      if (token) {
+          const headers = new HttpHeaders({
+            'Authorization': `Bearer ${token}`
+          });
+
+          return this.httpClient.delete<Reservation>(`${ this.baseUrl }/reservations/${id}`,{ headers });
+      }
+      return new Observable<Reservation>();
+  }
+
 
   createReservation(createReservation: CreateReservation): Observable<Reservation> {
       const token = localStorage.getItem('accessToken');
